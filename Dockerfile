@@ -1,5 +1,9 @@
 FROM ghcr.io/huginn/huginn
 
+USER root
+RUN apt-get update && apt-get install -y libpq-dev
+
+USER huginn
 ARG PGDATABASE
 ARG PGUSER
 ARG PGPASSWORD
