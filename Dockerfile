@@ -2,6 +2,8 @@ FROM ghcr.io/huginn/huginn
 
 USER root
 RUN apt-get update && apt-get install -y libpq-dev
+ENV HUGINN_DATABASE_ADAPTER=postgresql
+
 
 USER huginn
 ARG PGDATABASE
